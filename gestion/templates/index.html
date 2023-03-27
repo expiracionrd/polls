@@ -1,18 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es-do">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='{% static "/index.css" %}'>
     <title>Encuesta navideña</title>
 </head>
 <body>
     <h1>¡Bienvenido!</h1>
 
-    <form action="/admin/" method="post">
-        <label for="name">Coloque su nombre completo: </label>
-        <input type="text" name="name" value="{{ current_name }}">
-        <input type="submit" value="Ok">
+    <form action="/polls/" method="post">
+        <label for="your_name">Ingrese su nombre completo: </label>
+        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+        <input type="submit" value="OK">
     </form>
 
     <footer>La elección es anónima de forma completa. El registro de su nombre de pila es utilizado cómo identificador de empresa. Entiéndase, diferenciar entre empresas las opciones ganadoras.</footer>

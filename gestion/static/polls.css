@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+form{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+
+    box-shadow: 0 0 5px rgb(144, 144, 144);
+    padding: 1rem 2rem;
+
+    border-top: 1rem solid rgb(255, 108, 3);
+
+
+}
+
+form h1{
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: lighter;
+    color:#444444;
+}
+
+label{
+    display: block;
+    font-size: 1.2rem;
+
+}
+
+input{
+    float: left;
+    margin: 0.4rem;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    
+    
+    cursor: pointer;
+}
+.votar{
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 2px #999;
+}

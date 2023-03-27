@@ -11,4 +11,5 @@ admin.site.register(Category, CategoryAdmin)
 
 class PollAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
+    fields = ('title', 'description')
 admin.site.register(Poll, PollAdmin)

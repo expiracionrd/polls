@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='{% static "/polls.css" %}'>
+    <title>Encuesta</title>
+</head>
+<body>
+    <div class="container">
+
+		
+		<form action="/voted" method = 'post'>
+			<h1> ¿Qué te gustaría recibir en navidad? </h1>
+			
+			<label>Dentro de las regalías pascuales en nombre de '{{empresa.name}}' selecciona la qué mas deseas.</label>
+			
+            <input type="radio" id="bonos" name="elección" value="Bonos">
+            <label for="bonos">Bonos</label><br>
+            <input type="radio" id="canasta" name="elección" value="canasta">
+            <label for="canasta">Canasta navideña</label><br>
+            <input type="radio" id="fiesta" name="elección" value="fiesta">
+            <label for="fiesta">Fiesta</label>
+            
+			<input type='submit' class="votar", value = 'Votar'>
+			
+		</form>
+	</div>
+</body>
+</html>
