@@ -4,8 +4,7 @@ from .models import Poll
 # Create your views here.
 
 def index(request):
-    employees = employees
-    return render(request, 'index.html', {'employees' : employees})
+    return render(request, 'index.html')
 
 def polls(request):
     print(Poll.objects.all())
