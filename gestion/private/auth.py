@@ -1,20 +1,11 @@
-# import os, sys
-
-# login = input("Ingresa el nombre a continuación: ").capitalize()
-# if login == "hola":
-#     return("Tú pasas")
-# else:
-#     print("Intenta de nuevo." + "\n" + login) * 2
-
-
 def startAuth():
     login = input("Ingresa el nombre a continuación: ").casefold()
-
     people = reader()
 
-    print(people)
+    # print(people) // Sólo usar en DEBUG
     while login not in people:
-        login = input("Error. Ingresa el nombre a continuación: ")
+        login = print("Error. Ingresa el nombre a continuación: ")
+        return startAuth()
     else:
         print("Tú pasas.")
 
