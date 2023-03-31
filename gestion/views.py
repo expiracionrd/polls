@@ -1,18 +1,24 @@
 from django.shortcuts import render
 from .models import Poll
+from .helper.auth import startAuth
 
 # Create your views here.
 
 def index(request):
-    # if request.GET['your_name']:                  #! Pendiente de revisión
-    #     encontrado = request.GET['your_name']
-    #     nameLooking = 
-
+    
     return render(request, 'index.html')
 
 def polls(request):
-    print(Poll.objects.all())
+
+    print(request.POST)
+    form_data = request.POST
+    name = form_data.get('your_name')
+    print(name)
+    startAuth(name)
+
+
     return render(request, 'polls.html')
 
 def voted(request):
+    
     return render(request, 'voted.html')

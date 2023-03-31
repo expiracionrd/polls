@@ -16,12 +16,12 @@
 
         <h1>¡Bienvenido!</h1>
         
-        <form action="/polls" method="GET">
+        <form action="/polls" method="POST">
             {% csrf_token %}
             
             <label for="your_name">Ingrese su nombre completo: </label><br>
             <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-            <input type="submit" value="Verificar">
+            <input type="submit" action="" value="Verificar">
         </form>
         
         <footer>Los datos aquí mostrados son completamente privados. ¡Siéntete seguro de votar!</footer>
