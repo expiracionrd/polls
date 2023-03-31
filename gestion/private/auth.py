@@ -4,7 +4,7 @@ def startAuth():
 
     # print(people) // Sólo usar en DEBUG
     while login not in people:
-        login = print("Error. Ingresa el nombre a continuación: ")
+        login = print("Error. Intenta de nuevo. ")
         return startAuth()
     else:
         print("Tú pasas.")
