@@ -20,7 +20,8 @@
             {% csrf_token %}
             
             <label for="your_name">Ingrese su nombre completo: </label><br>
-            <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+            <input id="your_name" type="text" placeholder="Ex.: Ernesto Ronny Cruz Lora" name="your_name" value="{{ current_name }}">
+            <h3>Es importante qué escribe su nombre completo y tal cómo presenta su cédula.</h2>
             <input type="submit" action="" value="Verificar">
         </form>
         
