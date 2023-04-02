@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Poll, Author, Book, Category
 from .helper.auth import startAuth
-from .helper.keeper import saveForm
 import json
 
 # Create your views here.
@@ -31,7 +30,6 @@ def voted(request):
 
     # // Solo usar durante pruebas
     print(request.POST)
-    # if request.method == 'POST':
 
 
     # // Validación de selección.
@@ -39,15 +37,14 @@ def voted(request):
     voto = form_data.get('elección')
     print(voto)
     
+
+    # // Guarda la información de arriba en data.json
     data = {
-        'ganador':[
-        {
-        'eleccion': voto
-        }
-        ]
+        'ganador':[{
+        'eleccion': voto}]
     }
     
-    json_str = json.dumps(data)
+    json_str = json.dumps(data, indent=1)
     print(json_str)
     jsonFile = open('data.json', 'a')
     jsonFile.write(json_str)

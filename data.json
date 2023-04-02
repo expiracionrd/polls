@@ -1,1 +1,37 @@
-{"ganador": [{"eleccion": "Bonos"}]}{"ganador": [{"eleccion": "canasta"}]}
+{
+  "ganador": [
+    {
+      "eleccion": "canasta"
+    }
+  ]
+}{
+  "ganador": [
+    {
+      "eleccion": "canasta"
+    }
+  ]
+}{
+  "ganador": [
+    {
+      "eleccion": "Bonos"
+    }
+  ]
+}{
+ "ganador": [
+  {
+   "eleccion": "Bonos"
+  }
+ ]
+}{
+ "ganador": [
+  {
+   "eleccion": "Bonos"
+  }
+ ]
+}{
+ "ganador": [
+  {
+   "eleccion": "fiesta"
+  }
+ ]
+}
