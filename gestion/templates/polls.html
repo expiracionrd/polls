@@ -13,21 +13,26 @@
     <div class="container">
 
 		
-		<form action="/voted" method = 'POST'>
+		<form id="formu" action="/voted" method = 'POST'>
             {% csrf_token %}
 			<h1> ¿Qué te gustaría recibir en navidad? </h1>
 			
 			<label>Dentro de las regalías pascuales en nombre de {{empresa.name}} selecciona la qué mas deseas.</label>
 			
-            <input type="radio" id="bonos" name="elección" value="Bonos">
-            <label for="bonos">Bonos</label><br>
-            <input type="radio" id="canasta" name="elección" value="canasta">
-            <label for="canasta">Canasta navideña</label><br>
-            <input type="radio" id="fiesta" name="elección" value="fiesta">
+            <input type="radio" id="bonos" name="elección" value="Bonos" required>
+            <label for="bonos">Bonos</label>
+            <br>
+            <input type="radio" id="canasta" name="elección" value="canasta" required>
+            <label for="canasta">Canasta navideña</label>
+            <br>
+            <input type="radio" id="fiesta" name="elección" value="fiesta" required>
             <label for="fiesta">Fiesta</label>
             
 			<input type='submit' class="votar", value = 'Votar'>			
 		</form>
 	</div>
+
+<noscript>¡Perdón, no somos nosotros, eres tú! Tú navegador no soporta JavaScript.</noscript>
+
 </body>
 </html>
