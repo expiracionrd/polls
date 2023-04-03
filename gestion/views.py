@@ -2,12 +2,17 @@ from django.shortcuts import render
 from .models import Poll, Author, Book, Category
 from .helper.auth import startAuth
 import json
+from django.contrib import messages
+from django.contrib.messages import constants
+
 
 # Create your views here.
 
 def index(request):
     
     return render(request, 'index.html')
+
+# Verifica sí el usuario existe antes de votar
 
 def polls(request):
 
@@ -23,8 +28,8 @@ def polls(request):
 
     return render(request, 'polls.html')
 
-def get_employee():
-    return {'name': 'Bobby Hadz', 'vote': ''}
+
+# Guarda la información del voto.
 
 def voted(request):
 
@@ -38,16 +43,16 @@ def voted(request):
     print(voto)
     
 
-    # // Guarda la información de arriba en data.json
-    data = {
-        'ganador':[{
-        'eleccion': voto}]
-    }
-    
-    json_str = json.dumps(data, indent=1)
-    print(json_str)
-    jsonFile = open('data.json', 'a')
-    jsonFile.write(json_str)
-    jsonFile.close() 
+    # Abre el archivo JSON y carga su contenido en una lista de Python
+    with open('data.json') as archivo:
+        datos = json.load(archivo)
+
+    # Crea un nuevo objeto JSON y agrégalo a la lista
+    nuevo_objeto = {'eleccion': voto}
+    datos.append(nuevo_objeto)
+
+    # Guarda la lista modificada en el archivo JSON
+    with open('data.json', 'w') as archivo:
+        json.dump(datos, archivo)
 
     return render(request, 'voted.html')

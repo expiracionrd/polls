@@ -17,6 +17,14 @@
         
         <form action="/polls" method="POST">
             {% csrf_token %}
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             
             <label for="your_name">Ingrese su nombre completo: </label><br>
             <input id="your_name" type="text" placeholder="Ex.: Ernesto Ronny Cruz Lora" name="your_name" value="{{ current_name }}">
