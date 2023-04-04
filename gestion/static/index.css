@@ -3,12 +3,10 @@
     padding: auto;
     
     box-sizing: border-box;
-    
 }
 
 body{
     
-    /* background-image: url("test.png"); */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -33,39 +31,41 @@ h1{
     color:#000000;
 }
 
+
 /* 
-** Botones e input 
+** Botones, select e input 
 */
 
-input[type=number]{
-
+input{
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
-    background-image: url('search-people-icon.png');
+
     background-size: 25px 30px;
-    background-position: 10px 10px; 
+    background-position: 10px 5px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
 }
 
-input[type=number]{
-    
-        width: 100%;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background-color: white;
-        background-image: url('search-people-icon.png');
-        background-size: 25px 30px;
-        background-position: 10px 10px; 
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
+input[type=text]{
 
+    border: 2px solid #ccc;
+    background-image: url('search-people-icon.png');
+
+}
+
+input.test{
+
+    border: 2px solid #ccc;
+    background-image: url('badge-cedula.png');
+}
+
+select{
+    border: 2px solid #ccc;
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
 
 input[type=submit]{
@@ -76,6 +76,7 @@ input[type=submit]{
     color: white;
     background-color: cornflowerblue;
 }
+
 
 /* 
 ** Formularios y aspectos primordiales
