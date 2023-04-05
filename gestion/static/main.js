@@ -3,8 +3,10 @@ let cedula = document.getElementById("#your_id")
 let compania = document.getElementById("#company")
 
 
-console.log(nombre)
 nombre.addEventListener("change",(e)=>{
+    const result = document.querySelector(".result");
+    result.textContent = alert("test"),'You like ${Event.target}';
+    
     console.log(e.target.value)
 })
 

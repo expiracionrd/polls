@@ -22,7 +22,17 @@ with open(ruta, 'r') as archivo:
         elif i['eleccion'] == 'fiesta':
             fiesta = fiesta+1
             
-    print(bonos,canasta,fiesta)
+
+        totalB = bonos+1
+        totalC = canasta+1
+        totalF = fiesta+1
+    print( "Bonos:",bonos, "Canastas:",canasta, "Fiesta:",fiesta)
+
+slices = (totalB, totalC, totalF)
+colores = ('#8C482A', '#D96836', '#8C730E')
+pyplot.pie(slices, colors=colores)
+pyplot.show()
+
 
 
     
