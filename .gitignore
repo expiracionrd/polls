@@ -1,4 +1,6 @@
-*.pyc
-*.pyo
+/__pycache__
+.pyo
 
-*data.json
+
+.empleados.txt
+.data.json

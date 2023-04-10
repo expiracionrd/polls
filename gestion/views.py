@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Poll, Author, Book, Category
+from .resource.graphic import resultados
 from .helper.auth import startAuth
-import json
+import json, io, base64, urllib
 from django.contrib import messages
 from django.contrib.messages import constants
 
@@ -25,6 +26,18 @@ def polls(request):
     print(name)
     startAuth(name)
 
+    # # Abre el archivo JSON y carga su contenido en una lista de Python
+    # with open(r'votantes.json') as archivo:
+    #     nombres = json.load(archivo)
+
+    # # Crea un nuevo objeto JSON y agrégalo a la lista
+    # nuevo_objeto = {'your_name': name}
+    # nombres.append(nuevo_objeto)
+
+    # # Guarda la lista modificada en el archivo JSON
+    # with open('votantes.json', 'w') as archivo:
+    #     json.dump(nombres, archivo)
+
 
     return render(request, 'polls.html')
 
@@ -40,8 +53,7 @@ def voted(request):
     # // Validación de selección.
     form_data = request.POST
     voto = form_data.get('elección')
-    print(voto)
-    
+    print(voto)    
 
     # Abre el archivo JSON y carga su contenido en una lista de Python
     with open('data.json') as archivo:
@@ -56,3 +68,11 @@ def voted(request):
         json.dump(datos, archivo)
 
     return render(request, 'voted.html')
+
+def results(request):
+
+    #Ejecuta el 'graphics.py' para añadir imagen de los resultados en el template.
+    resultados()
+
+    return render(request, 'resultados.html')
+

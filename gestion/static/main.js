@@ -5,7 +5,7 @@ let compania = document.getElementById("#company")
 
 nombre.addEventListener("change",(e)=>{
     const result = document.querySelector(".result");
-    result.textContent = alert("test"),'You like ${Event.target}';
+    result.textContent ='You like ${Event.target}';
     
     console.log(e.target.value)
 })

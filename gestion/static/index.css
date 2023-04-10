@@ -1,103 +1,187 @@
-*{
-    margin: auto;
-    padding: auto;
-    
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+:root{
+    --main-color: #FF952E;
+    --secondary-color: #fac237;
+    --third-color: #E6B332;
+    --four-color: #007d62;
+    --five-color: #00464b;
+    --sixty-color: #1a1d27;
 }
 
-body{
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+	font-family: Raleway, sans-serif;
 }
 
-/* 
-** Container y diseño cabecera
- */
-
-.container{
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 600px;
-
-    box-shadow: 0 0 5px rgb(144, 144, 144);
-
+body {
+	background: linear-gradient(90deg, #E1EBEE, #76ABDF);		
 }
 
-h1{
-    display: block;
-    font-weight: bolder;
-    color:#000000;
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
 }
 
+/* Diseño de cards */
 
-/* 
-** Botones, select e input 
-*/
-
-input{
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 4px;
-    font-size: 16px;
-
-    background-size: 25px 30px;
-    background-position: 10px 5px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+.screen {		
+	background: linear-gradient(90deg, var(--secondary-color), #0088B3);		
+	position: relative;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #242430;
 }
 
-input[type=text]{
-
-    border: 2px solid #ccc;
-    background-image: url('search-people-icon.png');
-
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
 }
 
-input.test{
-
-    border: 2px solid #ccc;
-    background-image: url('badge-cedula.png');
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
 }
 
-select{
-    border: 2px solid #ccc;
-    width: 50%;
-    box-sizing: border-box;
-    border-radius: 4px;
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
 }
 
-input[type=submit]{
-    margin: 1rem;
-    
-    width: 15%;
-    padding: 10px;
-    color: white;
-    background-color: cornflowerblue;
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
 }
 
-
-/* 
-** Formularios y aspectos primordiales
- */
-
-
-h1, form{
-    padding: 1rem;
-    text-align: center;
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #FF7B09;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
 }
 
-h3{
-    color: #505050;
-    font-size: 15px;
-    font-weight: lighter;
-
-    margin: .5rem;
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, var(--secondary-color), var(--main-color));
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: var(--third-color);	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
+}
+
+ /* Form y login info */
+
+.login {
+	width: 320px;
+	padding: 30px;
+	padding-top: 156px;
+}
+
+.login__field {
+	padding: 20px 0px;	
+	position: relative;	
+}
+
+.login__icon {
+	position: absolute;
+	top: 30px;
+	color: var(--four-color);
+}
+
+.login__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+	outline: none;
+	border-bottom-color: var(--main-color);
+}
+
+.login__submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	color: #0088B3;
+	box-shadow: 0px 2px 2px #242430;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	border-color: var(--main-color);
+	outline: none;
+}
+
+.social-login {	
+	position: absolute;
+	height: 140px;
+	width: 160px;
+	text-align: center;
+	bottom: 0px;
+	right: 0px;
+	color: #fff;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+    font-size: 12px;
+}
+
+.social-login__icon {
+	padding: 20px 10px;
+	color: #fff;
+	text-decoration: none;	
+	text-shadow: 0px 0px 8px var(--four-color);
+}
+
+.social-login__icon:hover {
+	transform: scale(1.5);	
 }

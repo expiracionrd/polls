@@ -1,47 +1,36 @@
 from matplotlib import pyplot
-import json
+import json, io, base64, urllib
 
 ruta = './data.json'
 
-bonos = 0
-canasta = 0
-fiesta = 0
+def resultados():
+
+    bonos = 0
+    canasta = 0
+    fiesta = 0
 
 
-with open(ruta, 'r') as archivo:
-    datos = json.load(archivo)
+    with open(ruta, 'r') as archivo:
+        datos = json.load(archivo)
 
 
-    for i in datos:
-        if i['eleccion'] == 'Bonos':
-            bonos = bonos+1
+        for i in datos:
+            if i['eleccion'] == 'Bonos':
+                bonos = bonos+1
 
-        elif i['eleccion'] == 'canasta':
-            canasta = canasta+1
+            elif i['eleccion'] == 'canasta':
+                canasta = canasta+1
 
-        elif i['eleccion'] == 'fiesta':
-            fiesta = fiesta+1
-            
-
-        totalB = bonos+1
-        totalC = canasta+1
-        totalF = fiesta+1
-    print( "Bonos:",bonos, "Canastas:",canasta, "Fiesta:",fiesta)
-
-slices = (totalB, totalC, totalF)
-colores = ('#8C482A', '#D96836', '#8C730E')
-pyplot.pie(slices, colors=colores)
-pyplot.show()
+            elif i['eleccion'] == 'fiesta':
+                fiesta = fiesta+1
 
 
+            totalB = bonos+1
+            totalC = canasta+1
+            totalF = fiesta+1
+        print( "Bonos:",bonos, "Canastas:",canasta, "Fiesta:",fiesta)
 
-    
-
-    
-
-# if __name__ == '__main__':
-#     slices = (100, 15, 3)
-#     preferencias = ('Bonos', 'Canasta', 'Fiesta')
-#     colores = ('red', 'blue', 'yellow')
-#     pyplot.pie(slices, colors= colores)
-#     pyplot.show()
+    ejeX = (totalB, totalC, totalF)
+    ejeY = ('Bonos', 'Canasta', 'Fiesta')
+    pyplot.bar(ejeY, ejeX)
+    pyplot.savefig('gestion/static/graficos.png',  bbox_inches='tight')

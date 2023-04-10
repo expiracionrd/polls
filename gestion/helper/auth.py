@@ -11,7 +11,7 @@ def startAuth(login):
         print("Tú pasas.")
 
 
-# Busca los archivos en la database para ser enviardos a 'startAuth()'
+# Busca los archivos en la database para ser enviados a 'startAuth()'
 
 def reader():
     people = []
