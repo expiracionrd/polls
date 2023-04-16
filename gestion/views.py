@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import Poll, Author, Book, Category
-from .resource.graphic import resultados
 from .helper.auth import startAuth
+from .helper.graphic import resultados
 import json, io, base64, urllib
 from django.contrib import messages
 from django.contrib.messages import constants
+from django.http import JsonResponse, HttpResponseRedirect
+
 
 
 # Create your views here.
@@ -14,7 +16,6 @@ def index(request):
     return render(request, 'index.html')
 
 # Verifica sí el usuario existe antes de votar
-
 def polls(request):
 
     # // Solo usar durante pruebas
@@ -26,20 +27,8 @@ def polls(request):
     print(name)
     startAuth(name)
 
-    # # Abre el archivo JSON y carga su contenido en una lista de Python
-    # with open(r'votantes.json') as archivo:
-    #     nombres = json.load(archivo)
-
-    # # Crea un nuevo objeto JSON y agrégalo a la lista
-    # nuevo_objeto = {'your_name': name}
-    # nombres.append(nuevo_objeto)
-
-    # # Guarda la lista modificada en el archivo JSON
-    # with open('votantes.json', 'w') as archivo:
-    #     json.dump(nombres, archivo)
-
-
     return render(request, 'polls.html')
+    # return HttpResponseRedirect(request.POST.get('next'))
 
 
 # Guarda la información del voto.
@@ -76,3 +65,13 @@ def results(request):
 
     return render(request, 'resultados.html')
 
+
+##########################
+
+def getRoutes(request):
+    routes = [
+        'api/token',
+        'api/token/refresh',
+    ]
+
+    return JsonResponse(routes, safe=False)

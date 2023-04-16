@@ -18,16 +18,16 @@
         <div class="screen">
             <div class="screen__content">
 
-                <form class="login" action="/polls" method="POST">
+                <form class="login" action="../../polls" method="POST">
                     {% csrf_token %}
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" class="login__input" id="your_name" placeholder="Nombre completo" name="your_name" value="{{ current_name }}">
+                        <input type="text" class="login__input" id="your_name" placeholder="Nombre completo" name="username" value="{{ current_name }}">
                     </div>
 
                     <div class="login__field">
                         <i class="login__icon far fa-id-badge"></i>
-                        <input type="text" class="login__input" placeholder="Cédula de identidad" id="your_id" pattern="[0-9]+" name="your_id" value="{{ current_id }}">
+                        <input type="text" class="login__input" placeholder="Cédula de identidad" id="your_id" pattern="[0-9]+" name="password" value="{{ current_id }}">
                     </div>
 
                     <button class="button login__submit">
